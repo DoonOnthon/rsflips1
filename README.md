@@ -4,7 +4,7 @@ Functional website for rsflips: PlaceholderName
 People can add and track their flips / merch, also adding to the global margins and current prices of items.
 </p>
 
-<h2> Doelstellingen </h2>
+<h2> Goals </h2>
 
 <p>
 Create a friendly interface for people to add things into the database.
