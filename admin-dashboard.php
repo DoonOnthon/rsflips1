@@ -11,6 +11,7 @@ var_dump ($_SESSION);
   </head>
   <body>
 <?php include_once 'includes/navbar.php'; ?>
+<?php include_once 'includes/adminNavbar.php'; ?>
 <?php include_once 'includes/footer.inc.php'; ?>
   </body>
 </html>
