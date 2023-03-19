@@ -1,11 +1,12 @@
 <html lang="en">
   <head>
-  <?php include_once 'includes/header.inc.php'; ?>
+  <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflips/rsflips1/includes/header.inc.php'; ?>
     <title>RsFlips</title>
   </head>
   <body>
   <div class="register">
 			<h1>Register</h1>
+            <p> The only information we can see is your email and username everything else is hashed </p>
 			<form action="register.php" method="post" autocomplete="off">
 				<label for="username">
 					<i class="fas fa-user"></i>

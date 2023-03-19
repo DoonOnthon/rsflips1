@@ -1,5 +1,5 @@
 <?php
-include 'db.inc.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflips/rsflips1/includes/db.inc.php';
 
 // Retrieve POST data
 $itemName = $_POST['itemName'];
@@ -7,6 +7,8 @@ $price = $_POST['Price'];
 $time = $_POST['time'];
 $id = $_POST['id'];
 $itemID = $_POST['itemID'];
+$itemIDauto = $_POST['itemIDauto'];
+
 
 // Prepare and execute query
 $stmt = $conn->prepare("SELECT * FROM items WHERE itemName = ? AND price = ? AND itemID = ? AND time = ? AND id = ? AND itemIDauto = ?");

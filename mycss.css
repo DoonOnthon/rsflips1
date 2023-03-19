@@ -1,0 +1,6 @@
+#deleteBtn {
+    display: block !important;
+  }
+  .ui-autocomplete {
+    z-index: 9999;
+  }

@@ -1,8 +1,6 @@
-<?php
-include_once 'includes/functions.inc.php';
-include_once 'includes/db.inc.php';
-?>
-<?php include_once 'includes/db.inc.php' ?>
+
+<?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflips/rsflips1/includes/functions.inc.php'; ?>
+<?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflips/rsflips1/includes/db.inc.php';?>
 
 <!-- Required meta tags -->
     <meta charset="utf-8">
