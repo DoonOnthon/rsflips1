@@ -26,7 +26,7 @@
     <div class="form-group">
       <?php
       // Connect to your database and fetch data
-      $pdo = new PDO('mysql:host=localhost;dbname=rsflips', 'root', '');
+      $pdo = new PDO('mysql:host=localhost;dbname=dbs10393855', 'root', '');
       $stmt = $pdo->query('SELECT id, itemName FROM items');
       ?>
     </select>
@@ -43,7 +43,7 @@
     <!----- PHP CODE ------>
     <?php
 // Fetch all items from the database
-$pdo = new PDO('mysql:host=localhost;dbname=rsflips', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=dbs10393855', 'root', '');
 $id = $_SESSION["id"];
 $stmt = $pdo->query("SELECT id, itemName FROM items WHERE id = '$id'");
 $items = $stmt->fetchAll();

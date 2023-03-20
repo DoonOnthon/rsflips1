@@ -1,5 +1,5 @@
 <?php
-$pdo = new PDO('mysql:host=localhost;dbname=rsflips', 'root', '');
+include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflips/rsflips1/includes/pdo.inc.php';
 session_start();
 include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflips/rsflips1/includes/db.inc.php';
 

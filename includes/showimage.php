@@ -1,6 +1,6 @@
 <?php
 // connect to database
-$pdo = new PDO('mysql:host=localhost;dbname=rsflips', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=dbs10393855', 'root', '');
 
 // get item ID from URL parameter
 $itemID = isset($_GET['itemID']) ? $_GET['itemID'] : '';

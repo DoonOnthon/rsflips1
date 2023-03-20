@@ -1,6 +1,6 @@
 <?php
 // connect to database
-$pdo = new PDO('mysql:host=localhost;dbname=rsflips', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=dbs10393855', 'root', '');
 
 // get the search term from the client
 $searchTerm = isset($_GET['term']) ? $_GET['term'] : '';

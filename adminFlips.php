@@ -78,7 +78,7 @@ console.log('Autocomplete function called');
 session_start();
 include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflips/rsflips1/includes/db.inc.php';
 // Fetch all items from the database if they are also your ID (your flips)
-$pdo = new PDO('mysql:host=localhost;dbname=rsflips', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=dbs10393855', 'root', '');
 $id = $_SESSION["id"];
 $stmt = $pdo->query("SELECT id, itemName, description FROM items WHERE id = '$id'");
 $items = $stmt->fetchAll();
