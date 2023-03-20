@@ -5,7 +5,7 @@
 	<title>My Page</title>
 	<!-- include jQuery library -->
 	<script src="includes/js/jquery-3.6.4.min.js"></script>
-  <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.min.css"> -->
+  <<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.min.css">
 	<!-- include jQuery UI library -->
 	<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
 <script>
@@ -22,7 +22,7 @@ $(function() {
         response(data);
         console.log('Autocomplete function called');
         console.log(data);
-      },
+        },
 error: function(jqXHR, textStatus, errorThrown) {
   console.error("Error in AJAX request:", textStatus, errorThrown);
 }
