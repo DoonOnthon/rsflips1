@@ -7,7 +7,7 @@
   $host = "localhost";
   $username = "root";
   $password = "";
-  $dbname = "dbs10393855";
+  $dbname = "rsflips";
 
   // Maak connectie met de database.
   $con = mysqli_connect($host, $username, $password, $dbname);

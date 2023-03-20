@@ -1,6 +1,6 @@
 <?php
 // connect to database
-$pdo = new PDO('mysql:host=localhost;dbname=dbs10393855', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=rsflips', 'root', '');
 
 // get the search term from the client
 $searchTerm = isset($_GET['term']) ? $_GET['term'] : '';
@@ -19,7 +19,6 @@ function searchItems($pdo, $searchTerm) {
     $item['label'] = $row['itemName'];
     $item['value'] = $row['itemName'];
     $item['itemID'] = $row['itemID'];
-    $item['itemIcon'] = base64_encode($row['itemIcon']);
     $items[] = $item;
   }
 

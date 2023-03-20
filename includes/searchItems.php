@@ -1,6 +1,6 @@
 <?php
 // Connect to database
-$pdo = new PDO('mysql:host=localhost;dbname=dbs10393855', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=rsflips', 'root', '');
 
 // Get search query from POST data
 $itemSearch = $_POST['itemSearch'];

@@ -5,6 +5,7 @@
 	<title>My Page</title>
 	<!-- include jQuery library -->
 	<script src="includes/js/jquery-3.6.4.min.js"></script>
+  <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.min.css"> -->
 	<!-- include jQuery UI library -->
 	<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
 <script>
@@ -12,10 +13,19 @@ $(function() {
   $("#itemName").autocomplete({
     source: function(request, response) {
       // use AJAX to call the get_item_names.php file with the search term
-      $.getJSON("includes/get_item_names.php", { term: request.term }, function(data) {
+      $.ajax({
+  url: "includes/get_item_names.php",
+  dataType: "json",
+  data: { term: request.term },
+  success: function(data) {
+
         response(data);
         console.log('Autocomplete function called');
         console.log(data);
+      },
+error: function(jqXHR, textStatus, errorThrown) {
+  console.error("Error in AJAX request:", textStatus, errorThrown);
+}
       });
     },
     minLength: 2, // minimum characters to start search
@@ -37,7 +47,7 @@ console.log('Autocomplete function called');
         </button>
       </div>
       <div class="modal-body">
-    <form>
+      <form id="add-item-form" onsubmit="submitForm(event)">
         <div class="form-group">
             <label for="itemName">Item Name:</br>(you can click the names i'll make this clearer in the future)</label>
             <input type="text" class="form-control" id="itemName" name="itemName" required>
@@ -78,7 +88,7 @@ console.log('Autocomplete function called');
 session_start();
 include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflips/rsflips1/includes/db.inc.php';
 // Fetch all items from the database if they are also your ID (your flips)
-$pdo = new PDO('mysql:host=localhost;dbname=dbs10393855', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=rsflips', 'root', '');
 $id = $_SESSION["id"];
 $stmt = $pdo->query("SELECT id, itemName, description FROM items WHERE id = '$id'");
 $items = $stmt->fetchAll();
@@ -139,7 +149,7 @@ if ($admin == 1) {
       <p> Your past and current flips are displayed here so you can easily keep track!</p>
       <hr>
     </div>
-
+<!-- generated cards to display information about the item -->
     <div class="card-container">
     <?php foreach ($items as $item) { ?>
     <div class="card" style="width: 18rem;">
@@ -159,3 +169,24 @@ if ($admin == 1) {
     <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflips/rsflips1/includes/footer.inc.php'; ?>
   </body>
 </html>
+<script>
+function submitForm(event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  // Create a FormData object to hold the form data
+  var formData = new FormData(document.getElementById('add-item-form'));
+
+  // Send the form data to add_item.php using AJAX
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'includes/add_item.php', true);
+  xhr.onload = function () {
+    if (this.status === 200) {
+      console.log(this.responseText); // Output the response from add_item.php
+      location.reload(); // Reload the page to see the updated data
+    } else {
+      console.error('An error occurred during the request: ', this.status);
+    }
+  };
+  xhr.send(formData);
+}
+  </script>

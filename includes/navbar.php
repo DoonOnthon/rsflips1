@@ -35,7 +35,7 @@
                   <a class="nav-link" href="admin-dashboard.php">Dashboard</a>
                 </li>
                   <li class="nav-item">
-                  <a class="nav-link" href="adminFlips.php"></a>
+                  <a class="nav-link" href="adminFlips.php">Adminflips</a>
                 </li>
               <?php } else { // If anything but 1 send to Normal dashboard?> 
                 <li class="nav-item">

@@ -1,9 +1,9 @@
 <?php
-include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflips/rsflips1/includes/pdo.inc.php';
+$pdo = new PDO('mysql:host=localhost;dbname=rsflips', 'root', '');
 session_start();
 include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflips/rsflips1/includes/db.inc.php';
 
-if (isset($_POST['submit'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -12,9 +12,9 @@ error_reporting(E_ALL);
     $itemName = $_POST['itemName'];
     $price = $_POST['price']; // buy price
     $sellPrice = $_POST['sellPrice']; // sell price
-    $description = $_POST['description'];
-    $buyScreenshot = file_get_contents($_FILES['buyScreenshot']['tmp_name']);
-    $sellScreenshot = file_get_contents($_FILES['sellScreenshot']['tmp_name']);
+    $description = isset($_POST['description']) ? $_POST['description'] : null; // Item description
+    $buyScreenshot = isset($_FILES['buyScreenshot']) && $_FILES['buyScreenshot']['tmp_name'] !== '' ? file_get_contents($_FILES['buyScreenshot']['tmp_name']) : null; //buy screenshot
+    $sellScreenshot = isset($_FILES['sellScreenshot']) && $_FILES['sellScreenshot']['tmp_name'] !== '' ? file_get_contents($_FILES['sellScreenshot']['tmp_name']) : null; //sell screenshot
     $id = $_SESSION["id"];
 
     // Insert the values into the database
@@ -40,7 +40,10 @@ var_dump($stmt->errorInfo()); // to check if there are any database errors
   } catch (Exception $e) {
     echo "Error processing the form: " . $e->getMessage();
   }
-} else {
+} else { ?>
+  <script>
+  window.location.replace("includes/add_item.php.php");
+  </script> <?php
   echo "The form was not submitted.";
 }
 ?>
