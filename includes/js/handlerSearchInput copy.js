@@ -28,17 +28,14 @@ $(document).ready(function () {
 
             // Add a click event listener to set the value of the search input to the clicked suggestion
             suggestion.on('click', function () {
+              // Set the value of the search input to the clicked suggestion
               $('#itemSearch').val(item.itemName)
+
+              // Show the modal with details of the clicked item
+              $('#itemInfoModal').modal('show');
 
               // Clear the suggestions container
               suggestionsContainer.empty()
-
-              // Display the modal with additional details
-              $('#itemInfoModal').modal('show')
-              $('#itemId').text(item.id)
-              $('#itemPrice').text(item.price)
-              $('#itemTime').text(item.time)
-              $('#itemIdAuto').text(item.itemIdAuto)
             })
 
             // Append the suggestion element to the suggestions container

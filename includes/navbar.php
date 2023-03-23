@@ -23,7 +23,7 @@
       // Controle of gebruiker is ingelogd.
             if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 $id = $_SESSION["id"];
-                include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflips/rsflips1/includes/db.inc.php';
+                include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflipsmain/rsflips1/includes/db.inc.php';
  // Database include.
                 $sql = "SELECT admin FROM accounts WHERE id = $id"; 
                 $result = mysqli_query($con, $sql);

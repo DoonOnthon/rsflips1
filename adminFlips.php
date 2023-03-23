@@ -74,6 +74,10 @@ console.log('Autocomplete function called');
             <label for="sellScreenshot">Sell Screenshot:</label>
             <input type="file" class="form-control-file" id="sellScreenshot" name="sellScreenshot">
           </div>
+          <div class="form-group">
+    <label for="itemID">Item ID:</label>
+    <input type="number" class="form-control" id="itemID" name="itemID" required>
+</div>
           <button type="submit" id="add-item-btn" class="btn btn-primary" name="submit">
   Add Item
 </button>
@@ -86,7 +90,7 @@ console.log('Autocomplete function called');
 
 <?php
 session_start();
-include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflips/rsflips1/includes/db.inc.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflipsmain/rsflips1/includes/db.inc.php';
 // Fetch all items from the database if they are also your ID (your flips)
 $pdo = new PDO('mysql:host=localhost;dbname=rsflips', 'root', '');
 $id = $_SESSION["id"];
@@ -121,7 +125,7 @@ if ($admin == 1) {
 <!doctype html>
 <html lang="en">
   <head>
-    <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflips/rsflips1/includes/header.inc.php'; ?>
+    <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflipsmain/rsflips1/includes/header.inc.php'; ?>
     <title>Flipper's Den</title>
     <!--------- small bit of css to make cards appear left to right ----->
     <style>
@@ -136,7 +140,7 @@ if ($admin == 1) {
     </style>
   </head>
   <body>
-    <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflips/rsflips1/includes/navbar.php'; ?>
+    <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflipsmain/rsflips1/includes/navbar.php'; ?>
     <!--------------- CONTENT ------------->
     <div class="bg-light">
       <div class="explanationTitle">
@@ -166,7 +170,7 @@ if ($admin == 1) {
       <?php } ?>
     </div>
 
-    <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflips/rsflips1/includes/footer.inc.php'; ?>
+    <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflipsmain/rsflips1/includes/footer.inc.php'; ?>
   </body>
 </html>
 <script>

@@ -1,6 +1,6 @@
 <html lang="en">
   <head>
-  <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflips/rsflips1/includes/header.inc.php'; ?>
+  <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflipsmain/rsflips1/includes/header.inc.php'; ?>
     <title>RsFlips</title>
   </head>
   <body>

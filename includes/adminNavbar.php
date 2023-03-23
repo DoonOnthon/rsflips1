@@ -25,7 +25,7 @@
     // Execute query
     $sql = 'SELECT itemID, itemIDauto, itemName, price, time, id FROM items';
     $result = $conn->query($sql);
-    // Loop through result set and display usernames as links
+    // Loop through result set and display items
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo "<a class='itemName-link' href='#' data-id='" .

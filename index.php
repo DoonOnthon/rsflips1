@@ -6,11 +6,11 @@ session_start();
 <!doctype html>
 <html lang="en">
   <head>
-  <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflips/rsflips1/includes/header.inc.php'; ?>
+  <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflipsmain/rsflips1/includes/header.inc.php'; ?>
     <title>Flipper's Den</title>
   </head>
   <body>
-  <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflips/rsflips1/includes/navbar.php'; ?>
+  <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflipsmain/rsflips1/includes/navbar.php'; ?>
   <section class="section-about">
   <div class="container">
     <div class="row justify-content-center">
@@ -27,7 +27,7 @@ session_start();
       <div class="container-fluid py-5 bg-light">
   <div class="row">
     <div class="col-md-12 text-center">
-    <a href="/rsflips/rsflips1/roadmap.php" class="btn btn-info btn-lg">View our Roadmap</a>
+    <a href="/rsflipsmain/rsflips1/roadmap.php" class="btn btn-info btn-lg">View our Roadmap</a>
     </div>
   </div>
 </div>
@@ -36,7 +36,7 @@ session_start();
 </section>
 
   <!-- footer -->
-<?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflips/rsflips1/includes/footer.inc.php'; ?>
+<?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflipsmain/rsflips1/includes/footer.inc.php'; ?>
 <!----- extra footer for index -------->
 <footer class="bg-light py-3">
   <div class="container">

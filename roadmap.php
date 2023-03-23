@@ -4,11 +4,11 @@ session_start();
 <!doctype html>
 <html lang="en">
   <head>
-  <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflips/rsflips1/includes/header.inc.php'; ?>
+  <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflipsmain/rsflips1/includes/header.inc.php'; ?>
     <title>Flipper's Den roadmap</title>
   </head>
   <body>
-  <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflips/rsflips1/includes/navbar.php'; ?>
+  <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflipsmain/rsflips1/includes/navbar.php'; ?>
   <div class="container my-5">
   <div class="row">
     <div class="col-md-12 text-center">
@@ -98,7 +98,7 @@ session_start();
 </body>
 <body>
   <!-- footer -->
-  <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflips/rsflips1/includes/footer.inc.php'; ?>
+  <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflipsmain/rsflips1/includes/footer.inc.php'; ?>
 <!----- extra footer for index -------->
 <footer class="bg-light py-3">
   <div class="container">
