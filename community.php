@@ -1,9 +1,12 @@
+<?php
+session_start(); 
+?>
 <html lang="en">
   <head>
   <?php include_once 'includes/header.inc.php' ?>
     <title>Community</title>
   </head>
-  <body>
+  <body class="dark-mode">
   <?php include_once 'includes/navbar.php'?>
 </div>
 <div class="bg-light">

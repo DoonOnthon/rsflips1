@@ -1,6 +1,6 @@
 $(document).ready(function () {
   // Handler for search input
-  $('#itemSearch').on('input', function () {
+  $('#userItemName').on('input', function () {
     // Get search query
     var itemSearch = $(this).val()
 
@@ -11,8 +11,10 @@ $(document).ready(function () {
       data: { itemSearch: itemSearch },
       dataType: 'json',
       success: function (items) {
+        console.log('Success: handlerSearchInputUsers.js')
+
         // Get suggestions container
-        var suggestionsContainer = $('#suggestions')
+        var suggestionsContainer = $('#userItemResults')
 
         // Clear the suggestions container
         suggestionsContainer.empty()
@@ -25,19 +27,17 @@ $(document).ready(function () {
             var suggestion = $('<div>')
               .addClass('suggestion')
               .text(item.itemName)
+              .data('item', item) // Store the item data on the suggestion element
 
             // Add a click event listener to set the value of the search input to the clicked suggestion
             suggestion.on('click', function () {
-              // Set the value of the search input to the clicked suggestion
-              $('#itemSearch').val(item.itemName)
-
-              // Show the modal with details of the clicked item
-              $('#itemInfoModal').modal('show');
-
+              var itemData = $(this).data('item') // Retrieve the item data from the clicked suggestion
+            
+              $('#userItemName').val(itemData.itemName)
+            
               // Clear the suggestions container
               suggestionsContainer.empty()
             })
-
             // Append the suggestion element to the suggestions container
             suggestionsContainer.append(suggestion)
           })

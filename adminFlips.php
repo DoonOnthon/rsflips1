@@ -2,12 +2,14 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>My Page</title>
+	<title>New database items</title>
 	<!-- include jQuery library -->
 	<script src="includes/js/jquery-3.6.4.min.js"></script>
   <<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.min.css">
 	<!-- include jQuery UI library -->
 	<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+  <!-- different JS scripts -->
+  <script src="includes/js/addItemScript.js"></script>
 <script>
 $(function() {
   $("#itemName").autocomplete({
@@ -41,7 +43,7 @@ console.log('Autocomplete function called');
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addItemModalLabel">Add New Item</h5>
+        <h5 class="modal-title" id="addItemModalLabel">Add New Item into database</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -144,13 +146,13 @@ if ($admin == 1) {
     <!--------------- CONTENT ------------->
     <div class="bg-light">
       <div class="explanationTitle">
-        <h1> Your flips </h1>
+        <h1> New database entries </h1>
         <!-- Button to trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addItemModal">
   Add Item
 </button>
       </div>
-      <p> Your past and current flips are displayed here so you can easily keep track!</p>
+      <p> Add NEW items into the database</p>
       <hr>
     </div>
 <!-- generated cards to display information about the item -->
@@ -173,24 +175,25 @@ if ($admin == 1) {
     <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflipsmain/rsflips1/includes/footer.inc.php'; ?>
   </body>
 </html>
+<!--- java scripts ---->
 <script>
-function submitForm(event) {
-  event.preventDefault(); // Prevent the default form submission
-
-  // Create a FormData object to hold the form data
-  var formData = new FormData(document.getElementById('add-item-form'));
-
-  // Send the form data to add_item.php using AJAX
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'includes/add_item.php', true);
-  xhr.onload = function () {
-    if (this.status === 200) {
-      console.log(this.responseText); // Output the response from add_item.php
-      location.reload(); // Reload the page to see the updated data
-    } else {
-      console.error('An error occurred during the request: ', this.status);
-    }
-  };
-  xhr.send(formData);
-}
-  </script>
+    function submitForm(event) {
+    event.preventDefault(); // Prevent the default form submission
+  
+    // Create a FormData object to hold the form data
+    var formData = new FormData(document.getElementById('add-item-form'));
+  
+    // Send the form data to add_item.php using AJAX
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'includes/add_item.php', true);
+    xhr.onload = function () {
+      if (this.status === 200) {
+        console.log(this.responseText); // Output the response from add_item.php
+        location.reload(); // Reload the page to see the updated data
+      } else {
+        console.error('An error occurred during the request: ', this.status);
+      }
+    };
+    xhr.send(formData);
+  }
+</script>

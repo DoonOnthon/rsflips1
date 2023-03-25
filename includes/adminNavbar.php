@@ -23,7 +23,7 @@
         die('Connection failed: ' . $conn->connect_error);
     }
     // Execute query
-    $sql = 'SELECT itemID, itemIDauto, itemName, price, time, id FROM items';
+    $sql = 'SELECT itemID, itemIDauto, itemName, price, time, id FROM items ORDER BY time DESC';
     $result = $conn->query($sql);
     // Loop through result set and display items
     if ($result->num_rows > 0) {

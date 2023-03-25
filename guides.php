@@ -1,3 +1,6 @@
+<?php
+session_start(); 
+?>
 <html lang="en">
   <head>
   <?php include_once 'includes/header.inc.php' ?>
@@ -19,7 +22,7 @@
   <div class="card-body">
     <h5 class="card-title">Very Basic Flipping Guide</h5>
     <p class="card-text">A very basic beginner guide to flipping in Runescape</p>
-    <a href="guides/beginnerguide.php" class="btn btn-primary">Read</a>
+    <a href="beginnerguide.php" class="btn btn-primary">Read</a>
   </div>
 </div>
 

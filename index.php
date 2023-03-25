@@ -9,13 +9,15 @@ session_start();
   <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflipsmain/rsflips1/includes/header.inc.php'; ?>
     <title>Flipper's Den</title>
   </head>
-  <body>
+  <body class="dark-mode">
   <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflipsmain/rsflips1/includes/navbar.php'; ?>
   <section class="section-about">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8">
-        <h2 class="section-title text-center">About Flipper's Den</h2>
+        <h2 class="section-title text-center">About Flipper's Den </br>
+      </h2>
+        <p class ="section-text text-center">Note: make sure to check our roadmap at the bottom!</p>
         <div class="section-divider mb-5"></div>
         <p class="section-text text-center">Welcome to Flipper's Den - a community-driven project dedicated to providing accurate and
           up-to-date information on Oldschool Runescape and Runescape 3. Our mission is to become the go-to resource for every player, and we need your help to achieve this goal.</p>
@@ -38,7 +40,7 @@ session_start();
   <!-- footer -->
 <?php include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflipsmain/rsflips1/includes/footer.inc.php'; ?>
 <!----- extra footer for index -------->
-<footer class="bg-light py-3">
+<footer class="bg-light py-3" id="footer">
   <div class="container">
     <div class="row">
       <div class="col-lg-4 mb-4 mb-lg-0">

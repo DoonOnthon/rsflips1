@@ -25,6 +25,25 @@ session_start();
           </div>
           <div class="timeline-panel">
             <div class="timeline-heading">
+              <h4 class="timeline-title">IMPORTANT : busy working on stopping manipulation.</h4>
+            </div>
+            <div class="timeline-body">
+              <p>The development of an AI system to check buy and sell prices is currently underway,
+                 but the process takes time. We kindly ask for your patience until the system is fully operational.
+In the meantime, we strongly recommend that you exercise caution when considering buy and sell prices,
+ as they may not reflect accurate market values. We urge you not to rely solely on the prices provided,
+  and instead, conduct your own research and analysis before making any transactions.
+If you come across any prices that seem suspicious or inaccurate, please do not hesitate
+ to contact us via Discord or email. We value your feedback and cooperation in maintaining a fair and trustworthy marketplace.</p>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-badge bg-primary">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
               <h4 class="timeline-title">Community Feedback</h4>
             </div>
             <div class="timeline-body">

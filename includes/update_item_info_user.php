@@ -2,8 +2,8 @@
 include_once $_SERVER["DOCUMENT_ROOT"] . '/rsflipsmain/rsflips1/includes/db.inc.php';
 
 // Get itemIDauto, new price, and sell price from POST data
-$itemIDauto = $_POST['itemIDauto'];
-$newPrice = $_POST['price'];
+$itemIDauto = $_POST['itemId'];
+$newPrice = $_POST['itemPrice'];
 $sellPrice = $_POST['sellPrice'];
 var_dump($_POST);
 // Start transaction

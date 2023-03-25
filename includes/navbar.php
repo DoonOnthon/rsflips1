@@ -1,3 +1,6 @@
+<head>
+<title>Navbar</title>
+</head>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="index.php">Flipper's Den</a>
@@ -32,10 +35,14 @@
                 
                 if($admin == 1){ // if Admin = 1 ?>
                   <li class="nav-item">
-                  <a class="nav-link" href="admin-dashboard.php">Dashboard</a>
+                  <a class="nav-link" href="admin-dashboard.php">Admin Dashboard</a>
                 </li>
                   <li class="nav-item">
-                  <a class="nav-link" href="adminFlips.php">Adminflips</a>
+                  <a class="nav-link" href="adminFlips.php">Add new database items</a>
+                </li>
+                <li>
+                <li class="nav-item">
+                  <a class="nav-link" href="dashboard.php">Normal Dashboard</a>
                 </li>
               <?php } else { // If anything but 1 send to Normal dashboard?> 
                 <li class="nav-item">
@@ -46,6 +53,16 @@
                   <li class="nav-item">
                   <a class="nav-link" href="logout.php">Logout</a>
                 </li>
+                <div class="d-flex justify-content-end">
+                <div class="d-flex align-items-center">
+  <label for="dark-mode-toggle" class="mr-2 mb-0">Dark mode</label>
+  <label class="switch mb-0">
+    <input type="checkbox" id="dark-mode-toggle">
+    <span class="slider round"></span>
+  </label>
+</div>
+                </div>
+                </div>
                 <?php } else {?>
                   <li class="nav-item">
                   <a class="nav-link" href="login.php">Login</a>
@@ -57,3 +74,28 @@
     </ul>
   </div>
 </nav>
+
+
+
+<!--------------------- JAVA SCRIPT TO ENABLE DARK MODE ---------------------->
+<script>
+// Check the current state of the dark mode toggle and update the page accordingly
+  function updateDarkMode() {
+    const toggle = document.getElementById("dark-mode-toggle");
+    const isDarkMode = toggle.checked;
+    const body = document.querySelector("body");
+
+    if (isDarkMode) {
+      body.classList.add("dark-mode");
+    } else {
+      body.classList.remove("dark-mode");
+    }
+  }
+
+  // Add an event listener to the toggle to update the page when it's changed
+  const toggle = document.getElementById("dark-mode-toggle");
+  toggle.addEventListener("change", updateDarkMode);
+
+  // Update the page when it's loaded to reflect the current state of the toggle
+  updateDarkMode();
+</script>
